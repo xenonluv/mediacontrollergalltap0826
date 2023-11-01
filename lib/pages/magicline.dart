@@ -20,16 +20,20 @@ class _MagiclineState extends State<Magicline> {
               Expanded(
                 child: Container(
                   height: double.infinity,
-                  child: ElevatedButton(
+                  child: TextButton(
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
                     ),
-                    child: Image.asset(
-                      'assets/images/button1.png',
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Ink.image(
+                        image: AssetImage('assets/images/button1.png'),
                         fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () {},
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -38,16 +42,20 @@ class _MagiclineState extends State<Magicline> {
               Expanded(
                 child: Container(
                   height: double.infinity,
-                  child: ElevatedButton(
+                  child: TextButton(
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
                     ),
-                    child: Image.asset(
-                      'assets/images/button2.png',
-                      fit: BoxFit.cover,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Ink.image(
+                        image: AssetImage('assets/images/button1.png'),
+                        fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () {},
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -63,16 +71,20 @@ class _MagiclineState extends State<Magicline> {
               Expanded(
                 child: Container(
                   height: double.infinity,
-                  child: ElevatedButton(
+                  child: TextButton(
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
                     ),
-                    child: Image.asset(
-                      'assets/images/button3.png',
-                      fit: BoxFit.cover,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50.0),
+                      child: Ink.image(
+                        image: AssetImage('assets/images/button1.png'),
+                        fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () {},
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -81,16 +93,20 @@ class _MagiclineState extends State<Magicline> {
               Expanded(
                 child: Container(
                   height: double.infinity,
-                  child: ElevatedButton(
+                  child: TextButton(
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
                     ),
-                    child: Image.asset(
-                      'assets/images/button4.png',
-                      fit: BoxFit.cover,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Ink.image(
+                        image: AssetImage('assets/images/button1.png'),
+                        fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () {},
+                        ),
+                      ),
                     ),
                   ),
                 ),
