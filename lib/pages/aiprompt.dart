@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'dart:io';
 
 class AiPrompt extends StatefulWidget {
   const AiPrompt({Key? key}) : super(key: key);
@@ -10,6 +11,35 @@ class AiPrompt extends StatefulWidget {
 }
 
 class _AiPromptState extends State<AiPrompt> {
+
+
+  void sendDataToUnity(BuildContext context) async {
+    try {
+      Socket socket = await Socket.connect('192.168.68.52', 1234);
+      socket.write('HI Hello');
+      socket.destroy();
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('연결 실패'),
+            content: Text('연결이 실패했습니다.'),
+            actions: [
+              TextButton(
+                child: Text('확인'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
+
   String negative_prompts =
       "nipples, nude, nsfw, (missing legs:1.8), (ng_deepnegative_v1_75t:1.5), "
       "(badhandv4:1.6), (bad hands), ((weird legs:1)), ((duplicate legs:1)), ((weird fingers)), "
@@ -277,8 +307,9 @@ class _AiPromptState extends State<AiPrompt> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+
                 Container(
-                  width: 200,
+                  width: 70,
                   height: 50,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -301,8 +332,9 @@ class _AiPromptState extends State<AiPrompt> {
                         ),
                       )),
                 ),
+
                 Container(
-                  width: 200,
+                  width: 70,
                   height: 50,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -367,6 +399,34 @@ class _AiPromptState extends State<AiPrompt> {
                         ),
                       )),
                 ),
+
+                Container(
+                  width: 90,
+                  height: 50,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.teal,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                      onPressed: () {
+                        _textController.text = '';
+                        checkboxReset();
+                        setState(() {});
+                        sendDataToUnity(context);
+                      },
+                      child: Text(
+                        'Unity call',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      )),
+                ),
+
+
               ],
             )
           ]),
