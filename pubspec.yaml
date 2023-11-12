@@ -75,6 +75,9 @@ flutter:
       - assets/images/button2.png
       - assets/images/button3.png
       - assets/images/button4.png
+      - assets/images/flower.png
+      - assets/images/chair.png
+      - assets/images/desk.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
